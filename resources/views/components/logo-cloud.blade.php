@@ -1,9 +1,16 @@
-<section class="mx-auto max-w-5xl px-6 py-14">
-    <div class="flex flex-wrap items-center justify-center gap-x-16 gap-y-16 opacity-60 grayscale">
-        <span class="text-2xl font-semibold text-gray-700">Google</span>
-        <span class="text-2xl font-semibold text-gray-700">Meta</span>
-        <span class="text-2xl font-semibold text-gray-700">The Nest</span>
-        <span class="text-2xl font-semibold text-gray-700">Microsoft</span>
+<div class="mx-auto max-w-6xl overflow-hidden px-6 py-14">
+    <div class="flex w-max animate-marquee items-center gap-x-16 opacity-60 grayscale">
+        {{-- First set --}}
+        <img src="{{ asset('images/assets/company-logo/google-logo.png') }}" alt="Google" class="h-16 w-auto object-contain">
+        <img src="{{ asset('images/assets/company-logo/meta.png') }}" alt="Meta" class="h-24 w-auto object-contain">
+        <img src="{{ asset('images/assets/company-logo/the-nest-logo.png') }}" alt="The Nest" class="h-16 w-auto object-contain">
+        <img src="{{ asset('images/assets/company-logo/microsoft-logo.png') }}" alt="Microsoft" class="h-16 w-auto object-contain">
+
+        {{-- Duplicate set for seamless loop --}}
+        <img src="{{ asset('images/assets/company-logo/google-logo.png') }}" alt="Google" class="h-16 w-auto object-contain">
+        <img src="{{ asset('images/assets/company-logo/meta.png') }}" alt="Meta" class="h-24 w-auto object-contain">
+        <img src="{{ asset('images/assets/company-logo/the-nest-logo.png') }}" alt="The Nest" class="h-16 w-auto object-contain">
+        <img src="{{ asset('images/assets/company-logo/microsoft-logo.png') }}" alt="Microsoft" class="h-16 w-auto object-contain">
     </div>
-</section>
-<hr class="mx-auto max-w-6xl broder-gray-200">
+</div>
+<hr class="mx-auto max-w-6xl border-gray-200">
