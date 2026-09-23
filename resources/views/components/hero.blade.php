@@ -1,4 +1,4 @@
-<div class="mx-auto max-w-4xl px-6 pt-[100px] pb-12 text-center">
+<div class="mx-auto max-w-4xl px-6 pt-[150px] pb-12 text-center">
     <span class="mx-auto mb-6 inline-flex items-center gap-2 rounded-full bg-[#00224D] pl-2 pr-4 py-2 text-xs font-bold text-white">
         <span class="h-5 w-5 rounded-full bg-green-500"></span>
         Online
