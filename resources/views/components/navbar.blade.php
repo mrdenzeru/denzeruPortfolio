@@ -1,5 +1,5 @@
 <header class="bg-transparent w-full px-[100px]">
-    <nav class="flex w-full items-center justify-between py-4">
+    <nav class="flex w-full items-center justify-between py-4 pt-6">
         <a href="{{ url('/') }}" class="flex items-center">
             <img src="{{ asset('images/logo/denzeru-dark-tagline.png') }}" alt="denzeru" class="h-16 w-auto object-contain">
         </a>

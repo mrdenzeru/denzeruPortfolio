@@ -3,7 +3,7 @@
     <x-logo-cloud />
     <x-about />
     <x-services />
-    <x-recent-works />
+    <x-recent-projects />
     <x-testimonials />
     <x-blogs />
 </x-layouts.app>
