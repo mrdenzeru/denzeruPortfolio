@@ -1,5 +1,7 @@
 <?php
 
+putenv('PGOPTIONS=endpoint=ep-odd-bar-au7l6qgx');
+
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 
