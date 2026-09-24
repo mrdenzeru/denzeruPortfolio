@@ -1,5 +1,5 @@
-<div class="w-full px-[100px] overflow-hidden py-14">
-    <div class="flex w-max animate-marquee items-center gap-x-16 opacity-60 grayscale">
+<div id="logo-cloud" class="w-full px-[100px] overflow-hidden py-14">
+    <div class="logo-anim flex w-max animate-marquee items-center gap-x-16 opacity-60 grayscale">
         {{-- First set --}}
         <img src="{{ asset('images/assets/company-logo/google-logo.png') }}" alt="Google" class="h-18 w-auto object-contain">
         <img src="{{ asset('images/assets/company-logo/meta.png') }}" alt="Meta" class="h-24 w-auto object-contain">

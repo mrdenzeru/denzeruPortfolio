@@ -6,31 +6,31 @@
     ];
 @endphp
 
-<section class="mx-auto max-w-6xl px-6 pt-16 text-center">
-    <p class="text-sm text-gray-500">Testimonials & Blogs</p>
-    <h2 class="mt-1 text-3xl font-bold text-gray-900">Voices & Insights</h2>
-    <p class="mx-auto mt-3 max-w-xl text-sm text-gray-500">
+<div id="testimonials" class="w-full px-[150px] pt-20 text-center">
+    <p class="testimonials-anim text-md font-bold text-[#1A1A18] opacity-0">Testimonials & Blogs</p>
+    <h2 class="testimonials-anim mt-1 text-5xl font-extrabold text-[#1A1A18] opacity-0">Voices & Insights</h2>
+    <p class="testimonials-anim mx-auto mt-3 max-w-2xl text-md text-[#1A1A18] opacity-0">
         See what others have to say about working with me, and explore some of my thoughts and insights
         through my latest blog posts.
     </p>
 
-    <h3 class="mt-12 text-left text-sm font-semibold text-gray-900">My Clients Testimonials</h3>
+    <h3 class="testimonials-anim mt-12 text-left text-lg font-bold text-gray-900 opacity-0">My Clients Testimonials</h3>
     <div class="mt-4 grid grid-cols-1 gap-5 text-left sm:grid-cols-3">
         @foreach ($testimonials as $t)
-            <div class="rounded-2xl border border-gray-200 bg-white p-5">
+            <div class="testimonials-anim flex flex-col rounded-2xl bg-white p-5 opacity-0 shadow-md">
                 <div class="flex items-center gap-3">
-                    <div class="h-9 w-9 rounded-full bg-gray-300"></div>
+                    <div class="h-15 w-15 rounded-full bg-gray-300"></div>
                     <div>
-                        <p class="text-sm font-semibold text-gray-900">{{ $t['name'] }}</p>
-                        <p class="text-xs text-gray-500">{{ $t['role'] }}</p>
+                        <p class="text-lg font-semibold text-gray-900">{{ $t['name'] }}</p>
+                        <p class="text-md text-gray-500">{{ $t['role'] }}</p>
                     </div>
                 </div>
-                <p class="mt-3 text-xs text-gray-600">&ldquo;{{ $t['quote'] }}&rdquo;</p>
-                <div class="mt-3 flex items-center justify-between">
-                    <span class="text-xs text-yellow-500">{{ str_repeat('★', $t['rating']) }}{{ str_repeat('☆', 5 - $t['rating']) }}</span>
-                    <span class="text-xs text-gray-400">{{ $t['date'] }}</span>
+                <p class="mt-3 text-sm text-gray-600">&ldquo;{{ $t['quote'] }}&rdquo;</p>
+                <div class="mt-auto flex items-center justify-between pt-3">
+                    <span class="text-xl text-[#FFC30B]">{{ str_repeat('★', $t['rating']) }}{{ str_repeat('☆', 5 - $t['rating']) }}</span>
+                    <span class="text-md font-semibold text-[#1A1A18]">{{ $t['date'] }}</span>
                 </div>
             </div>
         @endforeach
     </div>
-</section>
+</div>
