@@ -5,9 +5,9 @@
         </a>
 
         <div class="hidden items-center gap-8 font-bold text-sm text-[#1A1A18] md:flex">
-            <a href="#projects" class="hover:text-gray-900">Projects</a>
-            <a href="#services" class="hover:text-gray-900">Services</a>
-            <a href="#about" class="hover:text-gray-900">About</a>
+            <a href="/projects" class="hover:text-gray-900">Projects</a>
+            <a href="/services" class="hover:text-gray-900">Services</a>
+            <a href="/about" class="hover:text-gray-900">About</a>
             <a href="#contact"
                class="rounded-lg bg-[#00224D] px-4 py-2 text-sm text-white hover:bg-[#FFC30B] hover:text-[#00224D]">
                 Work with Me
