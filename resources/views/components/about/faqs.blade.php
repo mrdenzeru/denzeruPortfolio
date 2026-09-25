@@ -12,7 +12,7 @@
     $half = ceil(count($faqs) / 2);
 @endphp
 
-<div class="mx-auto max-w-6xl px-6 py-16">
+<div class="mx-auto max-w-6xl h-[710px] px-6 py-16">
     <h2 class="text-4xl font-extrabold text-[#1A1A18]">FAQs</h2>
     <p class="mt-2 text-sm text-gray-600">Any Question? These are the Answers.</p>
 

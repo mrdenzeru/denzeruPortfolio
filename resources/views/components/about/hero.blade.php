@@ -7,17 +7,20 @@
     ];
 @endphp
 
-<div class="mx-auto max-w-6xl px-6 py-16">
-    <div class="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
-        <div class="aspect-square w-full max-w-sm rounded-2xl bg-gray-300"></div>
+<div class="mx-auto max-w-6xl px-6 py-8 mb-20">
+    <div class="relative z-0 grid grid-cols-1 items-center gap-x-5 md:grid-cols-2">
+        <span class="flex items-end justify-center">
+            <img src="{{ asset('images/assets/profiles/animated-profile.png') }}" alt="denzeru"
+                class="h-[500px] w-full max-w-sm object-contain">
+        </span>
 
         <div>
-            <h1 class="text-5xl font-extrabold italic text-[#00224D]">about me?</h1>
-            <p class="mt-3 text-2xl font-bold text-[#1A1A18]">Name's Denzel Dave</p>
+            <h1 class="text-5xl font-extrabold text-[#00224D]">about me?</h1>
+            <p class="mt-3 text-4xl font-extrabold text-[#1A1A18]">Name's Denzel Dave</p>
             <p class="mt-1 text-lg font-bold text-[#1A1A18]">
                 A designer and developer who loves creating meaningful digital experiences.
             </p>
-            <p class="mt-4 text-sm text-gray-600">
+            <p class="mt-4 text-md font-medium text-[#1A1A18]">
                 For 3 years now, I've loved taking the complex and making it feel simple, beautiful, and
                 easy to use. Outside of design, I find my balance in cooking good food, growing things,
                 and moving my body outdoors.
@@ -35,11 +38,6 @@
         </div>
     </div>
 
-    <div class="mt-10 border-t border-[#00224D]"></div>
+    <div class="relative z-10 -mt-8 border-t border-7 border-[#0E3266] rounded-full"></div>
 
-    <div class="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
-        @foreach ($stats as $stat)
-            <div class="aspect-[4/2] rounded-lg bg-gray-300"></div>
-        @endforeach
-    </div>
 </div>
