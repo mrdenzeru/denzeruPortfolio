@@ -5,6 +5,10 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+[x-cloak] {
+    display: none !important;
+}
+
 @font-face {
     font-family: 'Gilroy';
     src: url('/fonts/brand/Gilroy-Light.ttf') format('truetype');

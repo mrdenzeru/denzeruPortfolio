@@ -11,12 +11,12 @@
 
 </head>
 <body class="bg-[#f7f5f0] text-[#111827] antialiased">
-    <x-home.navbar />
+    <x-layouts.navbar />
 
     <main>
         {{ $slot }}
     </main>
 
-    <x-home.footer />
+    <x-layouts.footer />
 </body>
 </html>
