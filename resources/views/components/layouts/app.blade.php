@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,12 +12,20 @@
 
 </head>
 <body class="bg-[#f7f5f0] text-[#111827] antialiased">
-    <x-layouts.navbar />
 
-    <main>
-        {{ $slot }}
-    </main>
+    {{-- Shown only below the md breakpoint (768px) --}}
+    <x-underconstruction.mobile-block />
 
-    <x-layouts.footer />
+    {{-- Real site: hidden on mobile, shown from md and up --}}
+    <div class="hidden md:block">
+        <x-layouts.navbar />
+
+        <main>
+            {{ $slot }}
+        </main>
+
+        <x-layouts.footer />
+    </div>
+
 </body>
 </html>
