@@ -14,7 +14,7 @@
 <body class="bg-[#f7f5f0] text-[#111827] antialiased">
 
     {{-- Shown only below the md breakpoint (768px) --}}
-    <x-mobile-block />
+    <x-underconstruction.mobile-block />
 
     {{-- Real site: hidden on mobile, shown from md and up --}}
     <div class="hidden md:block">
