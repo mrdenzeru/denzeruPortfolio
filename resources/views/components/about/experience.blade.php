@@ -1,4 +1,7 @@
 @php
+    // Scroll distance (in vh) spent on each card change. Tweak this to speed up / slow down card switching.
+    $vhPerCard = 35;
+
     $experiences = [
         [
             'period' => 'October 2025 - Present | Full-Time',
@@ -52,48 +55,80 @@
     ];
 @endphp
 
-{{-- Outer tall wrapper controls scroll distance --}}
-<div id="exp-track" class="h-[500px] relative mb-30">
-    <section class="sticky top-50 w-full px-[200px]">
-        <div class="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16">
+{{--
+    Outer tall wrapper controls scroll distance.
+
+    Track height = 200dvh + (cards - 1) * $vhPerCard vh
+      - 100dvh : the sticky section's own height (the pin starts when the track top hits the viewport top)
+      - 100dvh : overlap zone — the Skills section slides up over this pinned section (margin-top: -100dvh on #skills-track)
+      - (cards - 1) * $vhPerCard : scroll distance used to switch between cards
+
+    Card switching finishes (last card fully active) exactly when Skills starts covering this section.
+    about.js uses: pinnedDistance = track.offsetHeight - window.innerHeight * 2
+
+    No ancestor of the sticky section may use overflow hidden/auto/scroll.
+--}}
+<div
+    id="exp-track"
+    class="relative"
+    style="height: calc(200dvh + {{ count($experiences) - 1 }} * {{ $vhPerCard }}vh)"
+>
+    <section class="sticky top-0 flex w-full items-center px-6 md:px-12 xl:px-[200px]" style="height: 100dvh">
+        <div class="grid w-full grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16">
             {{-- Left --}}
             <div>
-                <p class="text-xl font-bold text-[#1A1A18]">My Experiences</p>
-                <h2 class="mt-1 text-6xl font-extrabold text-[#00224D]">Where have I been.</h2>
-                <p class="mt-4 max-w-xl text-lg font-medium text-[#1A1A18]">
+                <p class="exp-anim text-xl font-bold text-[#1A1A18]">My Experiences</p>
+                <h2 class="exp-anim mt-1 text-6xl font-extrabold text-[#00224D]">Where have I been.</h2>
+                <p class="exp-anim mt-4 max-w-xl text-lg font-medium text-[#1A1A18]">
                     A look at the roles and projects that shaped my skills as a designer and developer —
                     scroll to explore each one.
                 </p>
+
+                {{-- Pagination dots: one per experience --}}
+                <div id="exp-dots" class="mt-8 flex items-center gap-2" role="tablist" aria-label="Experiences">
+                    @foreach ($experiences as $i => $exp)
+                        <button
+                            type="button"
+                            role="tab"
+                            data-index="{{ $i }}"
+                            data-active="false"
+                            aria-label="Go to {{ $exp['title'] }}"
+                            class="exp-dot h-2.5 w-2.5 cursor-pointer rounded-full bg-[#00224D]/25
+                                transition-all duration-500 ease-out hover:bg-[#00224D]/50
+                                data-[active=true]:w-8 data-[active=true]:bg-[#FFC30B]"
+                        ></button>
+                    @endforeach
+                </div>
             </div>
 
             {{-- Right: card box --}}
-            <div id="exp-box" class="relative w-full transition-[height] duration-500 ease-out">
+            <div id="exp-box" class="exp-anim relative w-full">
                 @foreach ($experiences as $i => $exp)
                     <div class="exp-step absolute inset-x-0 top-0 opacity-0" data-index="{{ $i }}">
                         {{--
                             Each circle gets its own data-factor-x / data-factor-y.
-                            These are the multipliers applied to the cursor offset in app.js —
+                            These are the multipliers applied to the cursor offset in about.js —
                             different signs = opposite directions, different magnitudes = faster/slower drift.
                         --}}
                         <span
-                            class="exp-circle absolute -left-10 -top-10 h-[174px] w-[174px] rounded-full bg-[#FFC30B]"
-                            data-factor-x="0.5"
-                            data-factor-y="0.35"
+                            class="exp-circle blur-sm absolute -left-10 -top-10 h-[174px] w-[174px] rounded-full bg-[#FFC30B]"
+                            data-factor-x="0.12"
+                            data-factor-y="0.09"
                         ></span>
                         <span
-                            class="exp-circle absolute right-15 -top-10 h-[153px] w-[153px] rounded-full bg-[#FFC30B]"
-                            data-factor-x="-0.35"
-                            data-factor-y="0.5"
+                            class="exp-circle blur-sm absolute right-15 -top-10 h-[153px] w-[153px] rounded-full bg-[#FFC30B]"
+                            data-factor-x="-0.09"
+                            data-factor-y="0.12"
                         ></span>
                         <span
-                            class="exp-circle absolute z-6 -right-25 top-1/3 h-[122px] w-[122px] rounded-full bg-[#FFC30B]"
-                            data-factor-x="0.6"
-                            data-factor-y="-0.4"
+                            class="exp-circle blur-sm absolute z-6 -right-25 top-1/3 h-[122px] w-[122px] rounded-full bg-[#FFC30B]"
+                            data-factor-x="0.15"
+                            data-factor-y="-0.1"
                         ></span>
                         <span
-                            class="exp-circle absolute z-6 -bottom-18 left-14 h-[101px] w-[101px] rounded-full bg-[#FFC30B]"
-                            data-factor-x="-0.55"
-                            data-factor-y="-0.6"
+                            class="exp-circle blur-sm absolute z-6 -bottom-18 left-14 h-[101px] w-[101px] rounded-full bg-[#FFC30B]"
+                            data-factor-x="-0.14"
+                            data-factor-y="-0.15"
                         ></span>
 
                         <div class="relative ml-4 rounded-2xl bg-white p-10 shadow-lg z-5">

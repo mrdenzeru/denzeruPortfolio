@@ -1,4 +1,4 @@
-<header class="sticky top-0 z-50 w-full h-[95px] bg-[#f7f5f0]/80 px-[100px] backdrop-blur-md">
+<header id="site-header" class="sticky top-0 z-50 h-[95px] w-full bg-[#f7f5f0]/80 px-[100px] backdrop-blur-md transition-transform duration-300 ease-out">
     <nav class="nav-anim flex w-full items-center justify-between py-4 pt-6 opacity-0">
         <a href="{{ url('/') }}" class="flex items-center">
             <img src="{{ asset('images/logo/denzeru-dark-tagline.png') }}" alt="denzeru" class="h-12 w-auto object-contain">

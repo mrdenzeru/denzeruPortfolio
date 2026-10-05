@@ -26,7 +26,7 @@
         @foreach ($blogs as $blog)
             <div class="blogs-anim flex gap-4 rounded-2xl border border-gray-200 bg-white p-4 opacity-0">
                 <div class="h-auto w-[50%] shrink-0 rounded-lg bg-gray-300"></div>
-                <div class="fles flex-col gap-2">
+                <div class="flex flex-col gap-2">
                     <h4 class="text-xl font-extrabold text-[#1A1A18]">{{ $blog['title'] }}</h4>
                     <p class="mt-1 text-md font-bold text-[#1A1A18]">Category: {{ $blog['category'] }}</p>
                     <p class="text-xs font-medium text-[#1A1A18]">{{ $blog['date'] }}</p>
