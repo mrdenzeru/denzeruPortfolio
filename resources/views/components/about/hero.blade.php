@@ -7,20 +7,20 @@
     ];
 @endphp
 
-<div class="mx-auto max-w-6xl px-6 py-8 mb-20">
+<div id="about" class="mx-auto max-w-6xl px-6 py-8">
     <div class="relative z-0 grid grid-cols-1 items-center gap-x-5 md:grid-cols-2">
         <span class="flex items-end justify-center">
-            <img src="{{ asset('images/assets/profiles/animated-profile.png') }}" alt="denzeru"
-                class="h-[500px] w-full max-w-sm object-contain">
+            <img src="{{ asset('images/assets/profiles/animated-profile.png') }}" loading="lazy" alt="denzeru"
+                class="about-img h-[500px] w-full max-w-sm object-contain">
         </span>
 
         <div>
-            <h1 class="text-5xl font-extrabold text-[#00224D]">about me?</h1>
-            <p class="mt-3 text-4xl font-extrabold text-[#1A1A18]">Name's Denzel Dave</p>
-            <p class="mt-1 text-lg font-bold text-[#1A1A18]">
+            <h1 class="about-anim text-5xl font-extrabold text-[#00224D]">about me?</h1>
+            <p class="about-anim mt-3 text-4xl font-extrabold text-[#1A1A18]">Name's Denzel Dave</p>
+            <p class="about-anim mt-1 text-lg font-bold text-[#1A1A18]">
                 A designer and developer who loves creating meaningful digital experiences.
             </p>
-            <p class="mt-4 text-md font-medium text-[#1A1A18]">
+            <p class="about-anim mt-4 text-md font-medium text-[#1A1A18]">
                 For 3 years now, I've loved taking the complex and making it feel simple, beautiful, and
                 easy to use. Outside of design, I find my balance in cooking good food, growing things,
                 and moving my body outdoors.
